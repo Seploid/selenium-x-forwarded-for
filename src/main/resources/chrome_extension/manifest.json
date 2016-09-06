@@ -1,0 +1,17 @@
+{
+"update_url":"http://clients2.google.com/service/update2/crx",
+  "name": "ModHeader",
+  "version": "1.2.4",
+  "manifest_version": 2,
+  "description": "Modify the Request Headers",
+  "background":  {
+    "scripts": [ "jquery.js", "background.js" ]
+  },
+  "incognito": "spanning",
+  "permissions": [
+    "tabs",
+    "webRequest",
+    "webRequestBlocking",
+    "<all_urls>"
+  ]
+}

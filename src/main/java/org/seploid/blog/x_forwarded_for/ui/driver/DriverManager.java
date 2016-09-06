@@ -14,7 +14,7 @@ public class DriverManager {
 
     private static final String URL = "http://%s:%s/wd/hub";
 
-    public static WebDriver getWebDriverWithIP(String host, String port, BrowserType browserType, DeviceType deviceType, List<HeaderElement> headerElements) {
+    public static WebDriver getWebDriverWithCustomHeader(String host, String port, BrowserType browserType, DeviceType deviceType, List<HeaderElement> headerElements) {
         CapabilityBuilder builder = new CapabilityBuilder(browserType);
         builder.setHeaderElements(headerElements);
         builder.setUserAgent(deviceType.getUserAgent());

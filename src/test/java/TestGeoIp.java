@@ -23,7 +23,7 @@ public class TestGeoIp {
         List<HeaderElement> headerElements = new ArrayList<HeaderElement>();
         headerElements.add(new BasicHeaderElement("X-Forwarded-For", expectedResult));
 //        opening geo ip
-        driver = DriverManager.getWebDriverWithIP("localhost", "4723", BrowserType.FIREFOX, DeviceType.NEXUS5_ANDROID4, headerElements);
+        driver = DriverManager.getWebDriverWithCustomHeader("localhost", "4723", BrowserType.FIREFOX, DeviceType.NEXUS5_ANDROID4, headerElements);
         driver.get("http://ru.smart-ip.net/geoip");
         String actualResult = driver.findElement(By.id("hostname")).getAttribute("value");
         Assert.assertEquals("Incorrect!", expectedResult, actualResult);
@@ -36,7 +36,7 @@ public class TestGeoIp {
         List<HeaderElement> headerElements = new ArrayList<HeaderElement>();
         headerElements.add(new BasicHeaderElement("X-Forwarded-For", expectedResult));
 //        opening geo ip
-        driver = DriverManager.getWebDriverWithIP("localhost", "4723", BrowserType.CHROME, DeviceType.NEXUS5_ANDROID4, headerElements);
+        driver = DriverManager.getWebDriverWithCustomHeader("localhost", "4723", BrowserType.CHROME, DeviceType.NEXUS5_ANDROID4, headerElements);
         driver.get("http://ru.smart-ip.net/geoip");
         String actualResult = driver.findElement(By.id("hostname")).getAttribute("value");
         Assert.assertEquals("Incorrect!", expectedResult, actualResult);
